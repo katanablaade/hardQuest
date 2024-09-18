@@ -8,7 +8,10 @@ const myQuest = function (parameter) {
   if (typeof parameter !== "string") {
     alert("Это не строка");
   } else if (typeof parameter === "string") {
-    parameter = parameter.trim().substring(0, 30) + "...";
+    parameter = parameter.trim();
+    if (parameter.length > 30) {
+      parameter = parameter.substring(0, 30) + "...";
+    }
   } else {
     parameter;
   }
