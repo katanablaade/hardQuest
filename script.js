@@ -4,24 +4,21 @@ let screenPrice;
 let arr = ["251", "542", "367", "429", "891", "211", "777"];
 let numbers = 100;
 
-const isNumber = function (num) {
-  return String(parseFloat(num)) === String(num) && isFinite(num);
-};
-
-do {
-  screenPrice = prompt("Сколько будет стоить данная работа?");
-} while (!isNumber(screenPrice));
-
-const results = arr.filter(function (digit) {
-  return digit.startsWith("2") || digit.startsWith("4");
-});
-
-primeNumbers: for (let i = 2; i < numbers; i++) {
-  for (let j = 2; j < i; j++) {
-    if (i % j == 0) continue primeNumbers;
+for (let i = 0; i < arr.length; i++) {
+  const element = arr[i];
+  if (element[0] === "2" || element[0] === "4") {
+    console.log(element);
   }
-  console.log(i + " Делители этого числа " + 1 + " и " + i);
 }
 
-console.log(screenPrice);
-console.log(results);
+for (let i = 0; i < numbers; i++) {
+  let kolichestvo = 0;
+  for (let j = 0; j <= i; j++) {
+    if (i % j === 0) {
+      kolichestvo++;
+    }
+  }
+  if (kolichestvo === 2) {
+    console.log(i + " делители этого числа: " + 1 + " и " + i);
+  }
+}
