@@ -6,7 +6,7 @@ let dateB;
 
 function declencion(n, text) {
   n = Math.abs(n) % 100;
-  var n1 = n % 10;
+  let n1 = n % 10;
   if (n > 10 && n < 20) {
     return text[2];
   }
@@ -21,8 +21,8 @@ function declencion(n, text) {
 
 function fullDate() {
   const search1 = document.getElementById('date_1');
-  search1.textContent = '';
   let date = new Date();
+  search1.textContent = '';
   dateA =
     'Cегодня ' +
     date.toLocaleString(lang, { weekday: 'long' }).charAt(0).toUpperCase(0) +
